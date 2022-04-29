@@ -1,0 +1,83 @@
+1. Selezionare tutti gli insegnanti
+
+QUERY: 
+SELECT *
+FROM teachers;
+
+2.Selezionare tutti i capi di ogni dipartimento
+
+QUERY:
+SELECT head_of_department
+FROM departments;
+
+3.Selzionare tutti i corsi di laurea magistrale
+
+QUERY:
+SELECT * 
+FROM degrees
+WHERE level = 'Magistrale';
+
+4.Selezionare tutti gli studenti che hanno come nome Marco
+
+QUERY:
+SELECT * 
+FROM students
+WHERE name = 'Marco';
+
+5.Selezionare tutti i corsi (insegnamenti) che valgono piu o uguale a 12 crediti
+
+QUERY:
+SELECT *
+FROM courses
+WHERE cfu >= 12;
+
+6.Selezionare tutti i corsi (insegnamenti) che valgono piu di 10 crediti oppure meno di 5
+
+QUERY:
+SELECT *
+FROM courses
+WHERE cfu > 10 OR cfu <5;
+
+7.Selezionare tutti i corsi (insegnamenti) del primo semestre del primo anno di un qualsiasi corso
+
+QUERY:
+SELECT *
+FROM courses
+WHERE period = 'I semestre' AND year = '1';
+
+8.Selezionare tutti i corsi (insegnamenti) che non hanno un sito web
+
+QUERY:
+SELECT *
+FROM courses
+WHERE website IS NULL;
+
+9.Selezionare tutti gli insegnanti che hanno un numero di telefono
+
+QUERY:
+SELECT *
+FROM teachers
+WHERE phone IS NOT NULL;
+
+BONUS: 
+
+10.Selezionare tutti gli studenti il cui nome inizia per "E"
+
+QUERY:
+SELECT *
+FROM students
+WHERE name LIKE 'e%';
+
+11.Contare tutti gli insegnanti che iniziano con "E" (suggerimento: guardate l'operatore COUNT)
+
+QUERY:
+SELECT COUNT (*)
+FROM teachers
+WHERE name LIKE 'e%';
+
+12.Contare tutti gli insegnanti che non hanno un numero di telefono
+
+QUERY:
+SELECT COUNT(*)
+FROM teachers
+WHERE phone IS NULL;
